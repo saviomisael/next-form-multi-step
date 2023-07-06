@@ -26,13 +26,16 @@ export const TabForm: FC<TabFormProps> = ({
     <section className={tabFormStyles}>
       <h2 className={styles['title']}>{title}</h2>
       <div>{children}</div>
-      <button
-        className={styles['button']}
-        type={buttonType}
-        onClick={(e) => buttonOnClick(e)}
-      >
-        {buttonText}
-      </button>
+      <div className={styles['actions-box']}>
+        {isLastStep && <button className={styles['button']}>Anterior</button>}
+        <button
+          className={styles['button']}
+          type={buttonType}
+          onClick={(e) => buttonOnClick(e)}
+        >
+          {buttonText}
+        </button>
+      </div>
     </section>
   );
 };
