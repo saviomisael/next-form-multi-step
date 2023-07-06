@@ -5,7 +5,7 @@ export type TabFormProps = {
   isLastStep: boolean;
   children: ReactNode;
   title: string;
-  buttonOnClick?: (e?: MouseEvent<HTMLButtonElement>) => {};
+  buttonOnClick?: (e: MouseEvent<HTMLButtonElement>) => void;
   hidden?: boolean;
 };
 
