@@ -1,0 +1,23 @@
+@use 'colors';
+
+.tab-form {
+  background-color: colors.$black;
+  padding: 1rem;
+  width: 100%;
+
+  > .title {
+    color: colors.$white;
+    font-size: 2.3rem;
+    text-transform: uppercase;
+  }
+
+  > .button {
+    background-color: colors.$purple;
+    font-size: 1.8rem;
+    padding: 0.5rem;
+    min-width: 100%;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    color: colors.$white;
+  }
+}
