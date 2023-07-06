@@ -3,7 +3,7 @@ import { multiStepFormReducer } from './slices/multi-step-form-slice';
 
 export const store = configureStore({
   reducer: {
-    multiStepFormReducer,
+    multiStepForm: multiStepFormReducer,
   },
   devTools: process.env.NODE_ENV !== 'production',
 });
