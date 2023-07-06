@@ -1,3 +1,4 @@
+import { AppStoreProvider } from '@/store/AppStoreProvider';
 import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -14,7 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <AppStoreProvider>{children}</AppStoreProvider>
+      </body>
     </html>
   );
 }
