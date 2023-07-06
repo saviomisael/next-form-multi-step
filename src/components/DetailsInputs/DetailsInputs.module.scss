@@ -1,0 +1,11 @@
+@use 'colors';
+@use 'extends_styles';
+
+.details-inputs {
+  color: rgba(colors.$white, 0.8);
+  font-size: 1.8rem;
+
+  > .input-box {
+    @extend %input-box;
+  }
+}
