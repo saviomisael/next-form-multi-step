@@ -4,9 +4,9 @@ export interface MultiStepFormInitialState {
   actualPage: number;
 }
 
-const initialState: MultiStepFormInitialState = {
+const initialState = {
   actualPage: 0,
-};
+} as MultiStepFormInitialState;
 
 export const multiStepFormSlice = createSlice({
   name: 'multi-step-form',
