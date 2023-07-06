@@ -1,0 +1,17 @@
+@use 'colors';
+
+.preferences-box {
+  font-size: 1.8rem;
+  color: rgba(colors.$white, 0.8);
+
+  > .input-box {
+    display: flex;
+    gap: 1rem;
+
+    > .checkbox {
+      &:checked {
+        accent-color: colors.$purple;
+      }
+    }
+  }
+}
