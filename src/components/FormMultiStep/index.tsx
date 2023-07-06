@@ -25,10 +25,16 @@ export const FormMultiStep = () => {
         title="Detalhes"
         hidden={actualPage !== 0}
         buttonOnClick={handleDetailsStep}
+        actualStep={actualPage}
       >
         <DetailsInputs />
       </TabForm>
-      <TabForm isLastStep={true} title="Preferências" hidden={actualPage !== 1}>
+      <TabForm
+        isLastStep={true}
+        title="Preferências"
+        hidden={actualPage !== 1}
+        actualStep={actualPage}
+      >
         <PreferencesBox />
       </TabForm>
     </form>

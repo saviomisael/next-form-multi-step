@@ -9,6 +9,7 @@ export type TabFormProps = {
   title: string;
   buttonOnClick?: (e: MouseEvent<HTMLButtonElement>) => void;
   hidden?: boolean;
+  actualStep: number;
 };
 
 export const TabForm: FC<TabFormProps> = ({
@@ -17,6 +18,7 @@ export const TabForm: FC<TabFormProps> = ({
   title,
   buttonOnClick = () => {},
   hidden = true,
+  actualStep,
 }) => {
   const dispatch = useAppDispatch();
   const buttonType = isLastStep ? 'submit' : 'button';
@@ -30,7 +32,7 @@ export const TabForm: FC<TabFormProps> = ({
       <h2 className={styles['title']}>{title}</h2>
       <div>{children}</div>
       <div className={styles['actions-box']}>
-        {isLastStep && (
+        {actualStep > 0 && (
           <button
             onClick={() => dispatch(multiStepFormActions.returnStep())}
             className={styles['button']}
