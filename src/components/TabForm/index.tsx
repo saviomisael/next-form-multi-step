@@ -6,6 +6,7 @@ export type TabFormProps = {
   children: ReactNode;
   title: string;
   buttonOnClick?: (e?: MouseEvent<HTMLButtonElement>) => {};
+  hidden?: boolean;
 };
 
 export const TabForm: FC<TabFormProps> = ({
@@ -13,12 +14,16 @@ export const TabForm: FC<TabFormProps> = ({
   children,
   title,
   buttonOnClick = () => {},
+  hidden = true,
 }) => {
   const buttonType = isLastStep ? 'submit' : 'button';
   const buttonText = isLastStep ? 'Salvar' : 'Próximo';
+  const tabFormStyles = hidden
+    ? `${styles['tab-form']} ${styles['-hidden']}`
+    : styles['tab-form'];
 
   return (
-    <section className={styles['tab-form']}>
+    <section className={tabFormStyles}>
       <h2 className={styles['title']}>{title}</h2>
       <div>{children}</div>
       <button

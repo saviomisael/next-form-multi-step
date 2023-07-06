@@ -20,4 +20,9 @@
     border-radius: 0.5rem;
     color: colors.$white;
   }
+
+  &.-hidden {
+    display: none;
+    visibility: hidden;
+  }
 }
