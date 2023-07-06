@@ -1,3 +1,5 @@
+import { useAppDispatch } from '@/store/hooks/store-hooks';
+import { multiStepFormActions } from '@/store/slices/multi-step-form-slice';
 import { FC, MouseEvent, ReactNode } from 'react';
 import styles from './TabForm.module.scss';
 
@@ -16,6 +18,7 @@ export const TabForm: FC<TabFormProps> = ({
   buttonOnClick = () => {},
   hidden = true,
 }) => {
+  const dispatch = useAppDispatch();
   const buttonType = isLastStep ? 'submit' : 'button';
   const buttonText = isLastStep ? 'Salvar' : 'Próximo';
   const tabFormStyles = hidden
@@ -27,7 +30,15 @@ export const TabForm: FC<TabFormProps> = ({
       <h2 className={styles['title']}>{title}</h2>
       <div>{children}</div>
       <div className={styles['actions-box']}>
-        {isLastStep && <button className={styles['button']}>Anterior</button>}
+        {isLastStep && (
+          <button
+            onClick={() => dispatch(multiStepFormActions.returnStep())}
+            className={styles['button']}
+            type="button"
+          >
+            Anterior
+          </button>
+        )}
         <button
           className={styles['button']}
           type={buttonType}

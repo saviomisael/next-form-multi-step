@@ -18,6 +18,9 @@ export const multiStepFormSlice = createSlice({
     goToPreferencesStep: (state) => {
       state.actualPage = 1;
     },
+    returnStep: (state) => {
+      state.actualPage--;
+    },
   },
 });
 
