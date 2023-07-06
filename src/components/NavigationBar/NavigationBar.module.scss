@@ -1,0 +1,43 @@
+@use 'colors';
+
+.navigation-bar {
+  font-size: 1.8rem;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+
+  > .tab-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    background-color: transparent;
+
+    > .tabnumber {
+      background-color: rgba(colors.$gray, 0.8);
+      border-radius: 50%;
+      min-width: 4rem;
+      min-height: 4rem;
+      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    > .tabtext {
+      color: colors.$white;
+    }
+
+    &.-active {
+      > .tabnumber {
+        background-color: colors.$purple;
+      }
+
+      > .tabtext {
+        color: colors.$purple;
+      }
+    }
+  }
+}
