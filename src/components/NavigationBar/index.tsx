@@ -16,6 +16,7 @@ export const NavigationBar: FC<NavigationBarProps> = ({ indexActive }) => {
           className={`${styles['tab-button']} ${tabButtonStyles(
             indexActive === index,
           )}`}
+          type="button"
           key={x}
         >
           <span className={styles['tabnumber']}>{index + 1}</span>
