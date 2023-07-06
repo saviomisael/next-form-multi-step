@@ -1,7 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { multiStepFormReducer } from './slices/multi-step-form-slice';
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    multiStepFormReducer,
+  },
   devTools: process.env.NODE_ENV !== 'production',
 });
 
